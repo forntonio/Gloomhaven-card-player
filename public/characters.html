@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Characters - Ability Card Manager</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Your Characters</h1>
+      <nav>
+        <button id="logoutBtn">Logout</button>
+        <a id="adminLink" href="admin.html" style="display:none;">Admin Panel</a>
+      </nav>
+    </header>
+    <section>
+      <h2>Existing Characters</h2>
+      <div id="charactersList" class="list"></div>
+    </section>
+    <section>
+      <h2>Create New Character</h2>
+      <form id="newCharForm">
+        <div class="form-row">
+          <label for="charName">Name</label>
+          <input type="text" id="charName" required />
+        </div>
+        <div class="form-row">
+          <label for="gameSelect">Game</label>
+          <select id="gameSelect" required></select>
+        </div>
+        <div class="form-row">
+          <label for="classSelect">Class</label>
+          <select id="classSelect" required></select>
+        </div>
+        <div class="form-row">
+          <label for="charLevel">Level</label>
+          <input type="number" id="charLevel" min="1" max="9" value="1" required />
+        </div>
+        <button type="submit">Create Character</button>
+      </form>
+      <div id="newCharMessage" class="message"></div>
+    </section>
+  </div>
+  <script src="js/characters.js"></script>
+</body>
+</html>

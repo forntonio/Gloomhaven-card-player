@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character - Ability Card Manager</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="charNameHeading">Character</h1>
+      <nav>
+        <a href="characters.html">&larr; Back to Characters</a>
+      </nav>
+    </header>
+    <section id="handSelection" style="display:none;">
+      <h2>Select Scenario Hand</h2>
+      <p>Select exactly <span id="handSizeSpan"></span> cards for your hand.</p>
+      <form id="handForm">
+        <div id="availableCards" class="list"></div>
+        <button type="submit">Confirm Hand</button>
+      </form>
+      <div id="handMessage" class="message"></div>
+    </section>
+    <section id="zonesSection" style="display:none;">
+      <h2>Manage Cards</h2>
+      <div class="zones">
+        <div class="zone" id="handZone">
+          <h3>Hand</h3>
+          <div class="cards" id="handCards"></div>
+        </div>
+        <div class="zone" id="activeZone">
+          <h3>Active</h3>
+          <div class="cards" id="activeCards"></div>
+        </div>
+        <div class="zone" id="discardZone">
+          <h3>Discard</h3>
+          <div class="cards" id="discardCards"></div>
+        </div>
+        <div class="zone" id="lostZone">
+          <h3>Lost</h3>
+          <div class="cards" id="lostCards"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    const charId = new URLSearchParams(window.location.search).get('id');
+    if (!charId) {
+      window.location.href = 'characters.html';
+    }
+  </script>
+  <script src="js/character.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel - Ability Card Manager</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Admin Panel</h1>
+      <nav>
+        <a href="characters.html">&larr; Back to Characters</a>
+      </nav>
+    </header>
+    <section id="userManagement">
+      <h2>User Management</h2>
+      <form id="createUserForm">
+        <div class="form-row">
+          <label for="newUsername">Username</label>
+          <input type="text" id="newUsername" required />
+        </div>
+        <div class="form-row">
+          <label for="newRole">Role</label>
+          <select id="newRole">
+            <option value="player">Player</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <button type="submit">Create User</button>
+      </form>
+      <div id="userMessage" class="message"></div>
+      <h3>Existing Users</h3>
+      <table id="usersTable">
+        <thead>
+          <tr><th>Username</th><th>Role</th><th>Reset Password</th></tr>
+        </thead>
+        <tbody id="usersBody"></tbody>
+      </table>
+    </section>
+    <section id="gameManagement">
+      <h2>Games</h2>
+      <form id="createGameForm">
+        <div class="form-row">
+          <label for="gameName">Game Name</label>
+          <input type="text" id="gameName" required />
+        </div>
+        <button type="submit">Add Game</button>
+      </form>
+      <div id="gameMessage" class="message"></div>
+      <ul id="gamesList" class="list"></ul>
+    </section>
+    <section id="classManagement">
+      <h2>Classes</h2>
+      <form id="createClassForm">
+        <div class="form-row">
+          <label for="classGameSelect">Game</label>
+          <select id="classGameSelect"></select>
+        </div>
+        <div class="form-row">
+          <label for="className">Class Name</label>
+          <input type="text" id="className" required />
+        </div>
+        <div class="form-row">
+          <label for="classHandSize">Hand Size</label>
+          <input type="number" id="classHandSize" min="1" max="12" value="10" required />
+        </div>
+        <button type="submit">Add Class</button>
+      </form>
+      <div id="classMessage" class="message"></div>
+      <div id="classesList" class="list"></div>
+    </section>
+    <section id="cardManagement">
+      <h2>Cards</h2>
+      <form id="createCardForm">
+        <div class="form-row">
+          <label for="cardClassSelect">Class</label>
+          <select id="cardClassSelect"></select>
+        </div>
+        <div class="form-row">
+          <label for="cardName">Card Name</label>
+          <input type="text" id="cardName" required />
+        </div>
+        <div class="form-row">
+          <label for="cardLevel">Card Level</label>
+          <input type="number" id="cardLevel" min="1" max="9" value="1" required />
+        </div>
+        <div class="form-row">
+          <label for="cardImage">Image</label>
+          <input type="file" id="cardImage" accept="image/*" />
+        </div>
+        <button type="submit">Add Card</button>
+      </form>
+      <div id="cardMessage" class="message"></div>
+      <div id="cardsList" class="list"></div>
+    </section>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
