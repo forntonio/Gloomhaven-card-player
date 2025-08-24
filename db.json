@@ -2,12 +2,12 @@
   "users": [
     {
       "username": "admin",
-      "passwordHash": "99b3e4e158c91d2bac6d2a25a6380fe1:ef29ecf85df8e16f46a9b38cdc3f2ebb211cc6f62b57608d4a049be643444929c6e1d59ccb1aeb2b5e0d71445355a4d27dcf8f76283d38ba55d3fc7041db2477",
+      "passwordHash": null,
       "role": "admin"
     },
     {
       "username": "player1",
-      "passwordHash": "3ea700e5188ce39daa0b612151015f6a:faeaeae8f4c18ec1519efcb91dae31ac274b327dacb173c4504c4dd482cd82acb384b066293332b2add4720f3a9406d3fa7d95ec52b1c4b3f511d2379fe6bc0d",
+      "passwordHash": null,
       "role": "player"
     }
   ],
