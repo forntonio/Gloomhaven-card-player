@@ -98,7 +98,9 @@ function requireAuth(req, res, role) {
 
 // Serve static files from the public directory
 function serveStatic(req, res) {
-  const filePath = path.join(__dirname, 'public', decodeURIComponent(req.url.replace(/^\/public\//, '')));
+  const url = new URL(req.url, 'http://localhost');
+  const pathname = decodeURIComponent(url.pathname.replace(/^\/public\//, ''));
+  const filePath = path.join(__dirname, 'public', pathname);
   if (!filePath.startsWith(path.join(__dirname, 'public'))) {
     res.writeHead(400);
     res.end('Bad request');
@@ -650,3 +652,5 @@ const port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+module.exports = server;
